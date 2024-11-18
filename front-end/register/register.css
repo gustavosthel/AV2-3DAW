@@ -1,0 +1,120 @@
+.container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.container .left {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .left img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.container .right {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.container .right .forms {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+}
+
+.container .right .forms h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2d3436;
+}
+
+.container .right .forms p {
+    font-size: 0.9rem;
+    color: #636e72;
+}
+
+/* Labels e inputs */
+.container .right .forms label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    color: #2d3436;
+}
+
+.container .right .forms input[type="text"],
+.container .right .forms input[type="tel"],
+.container .right .forms input[type="password"] {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #cfcfcf;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #2d3436;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+.container .right .forms input:focus {
+    border-color: #9a8996;
+}
+
+.container .right .forms .checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.container .right .forms input[type="checkbox"] {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 2px;
+    border: 1px solid #cfcfcf;
+    margin-right: 0.5rem;
+    cursor: pointer;
+    position: relative;
+    background-color: transparent;
+}
+
+.container .right .forms input[type="checkbox"]:checked {
+    background-color: #9a8996;
+}
+
+/* Adicionando o ícone de check */
+.container .right .forms input[type="checkbox"]:checked::after {
+    content: "\2713"; /* Símbolo Unicode para o checkmark (✔) */
+    font-size: 14px; 
+    color: #ffff; 
+    position: absolute;
+    left: 2px; 
+}
+
+/* Botões */
+.container .right .forms button {
+    width: 100%;
+    padding: 0.6rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    background: #9a8996;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.container .right .forms button:hover {
+    background: #b0a0ac;
+}
