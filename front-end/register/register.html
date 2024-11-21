@@ -12,32 +12,34 @@
 
     <div class="container">
         <div class="left">
-            <img src="../public/imagens/imgRegistro2.webp" alt="">
+            <img src="../public/imagens/ImagenDeRegistro.svg" alt="">
         </div>
         <div class="right">
-            <div class="forms">
+            <form  class="forms" id="formsUsuario">
                 <h2>Registre-se</h2>
                 <p>Explore por todos os nosso recusos realizando o registro no nosso sistema</p>
                 <label>Nome</label>
-                <input type="text">
+                <input type="text"  id="nome" placeholder="Digite o seu nome">
                 <label>Email</label>
-                <input type="text">
+                <input type="text" id="email" placeholder="Digite o seu email">
                 <label>Cpf</label>
-                <input type="text">
+                <input type="text" id="cpf" placeholder="Digite o seu CPF">
                 <label>Telefone</label>
-                <input type="tel">
+                <input type="tel" id="telefone" placeholder="Digite o seu telefone">
                 <label>Senha</label>
-                <input type="password">
+                <input type="password" id="senha" placeholder="Digite a sua senha">
                 <label>Confirma Senha</label>
-                <input type="password">
+                <input type="password" id="confirmaSenha" placeholder="Confirme a sua senha">
                 <div class="checkbox-container">
-                    <input type="checkbox">
+                    <input type="checkbox" id="manterConectado">
                     <p>Manter Conectado?</p>
                 </div>
-                <button>Registrar</button>
-            </div>
+                <button type="submit">Registrar</button>
+                <p>ja possuir uma conta? faça o <a href="../login/login.html">login aqui</a></p>
+            </form>
         </div>
+
     </div>
-    
+    <script src="register.js"></script>
 </body>
 </html>

@@ -56,8 +56,8 @@
 .container .right .forms input[type="tel"],
 .container .right .forms input[type="password"] {
     width: 100%;
-    padding: 0.6rem;
-    border: 1px solid #cfcfcf;
+    padding: 0.8rem;
+    border: 2px solid #cdcdcd;
     border-radius: 5px;
     font-size: 1rem;
     color: #2d3436;
@@ -66,7 +66,7 @@
 }
 
 .container .right .forms input:focus {
-    border-color: #9a8996;
+    border-color: #B4A0E5;
 }
 
 .container .right .forms .checkbox-container {
@@ -80,7 +80,7 @@
     width: 15px;
     height: 15px;
     border-radius: 2px;
-    border: 1px solid #cfcfcf;
+    border: 2px solid #a6a6a6;
     margin-right: 0.5rem;
     cursor: pointer;
     position: relative;
@@ -88,7 +88,7 @@
 }
 
 .container .right .forms input[type="checkbox"]:checked {
-    background-color: #9a8996;
+    background-color: #B4A0E5;
 }
 
 /* Adicionando o ícone de check */
@@ -97,7 +97,7 @@
     font-size: 14px; 
     color: #ffff; 
     position: absolute;
-    left: 2px; 
+    left: 1px; 
 }
 
 /* Botões */
@@ -108,13 +108,18 @@
     font-size: 1rem;
     font-weight: 600;
     color: #fff;
-    background: #9a8996;
+    background: #B4A0E5;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-bottom: 10px;
     transition: background 0.3s ease;
 }
 
 .container .right .forms button:hover {
-    background: #b0a0ac;
+    background: #c1b3e4;
+}
+
+.container .right .forms p a {
+    color: #B4A0E5;
 }
