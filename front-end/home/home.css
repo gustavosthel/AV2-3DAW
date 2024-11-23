@@ -1,0 +1,63 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    padding: 0 50px;
+}
+
+.header h2 {
+    color: #354670;
+    font-weight: 600;
+}
+
+.header .nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 1rem;
+}
+
+.header .profile {
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 15px;
+}
+
+.header .profile .info {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.header .profile .info img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.header .profile .account h5 {
+    font-size: 15px;
+    margin-bottom: 4px;
+    cursor: pointer;
+}
+
+.header .profile .account p {
+    font-size: 13px;
+    color: #999;
+}
+
+.header .profile > i {
+    font-size: 24px;
+    color: #354670;
+    cursor: pointer;
+}
+
+.container {
+    
+}
+

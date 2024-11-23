@@ -6,31 +6,31 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../globals.css">
     <link rel="stylesheet" href="../register/register.css">
-    <title>Cadastro</title>
+    <title>Login</title>
 </head>
 <body>
 
     <div class="container">
         <div class="right">
-            <div class="forms">
+            <form class="forms" id="formsUsuario">
                 <h2>Loga-se</h2>
                 <p>Explore por todos os nosso recusos realizando o registro no nosso sistema</p>
                 <label>Email</label>
-                <input type="text" placeholder="Digite o seu email">
+                <input type="text" id="email" name="email" placeholder="Digite o seu email">
                 <label>Senha</label>
-                <input type="password" placeholder="Digite a sua senha">
+                <input type="password" id="senha" name="senha" placeholder="Digite a sua senha">
                 <div class="checkbox-container">
-                    <input type="checkbox">
+                    <input type="checkbox" id="manterConectado" name="manterConectado">
                     <p>Manter Conectado?</p>
                 </div>
-                <button>Logar</button>
+                <button type="submit">Logar</button>
                 <p>Não possuir uma conta? faça o <a href="../register/register.html">registro aqui</a></p>
-            </div>
+            </form>
         </div>
         <div class="left">
             <img src="../public/imagens/ImagenDeRegistro.svg" alt="">
         </div>
     </div>
-    
+    <script src="login.js"></script>
 </body>
 </html>

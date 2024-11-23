@@ -39,13 +39,19 @@ function getFormData(form) {
 
 // Função para enviar os dados do formulário via fetch
 async function sendFormData(userData) {
-    return fetch("/clinica-estetica/back-end/api/register.php", {
+    return fetch("/clinica-estetica/back-end/api/login.php", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify(userData),
     });
+}
+
+// Função para tratar erros inesperados na requisição
+function handleRequestError(error) {
+    console.error("Erro ao realizar a requisição:", error);
+    alert("Erro inesperado. Por favor, tente novamente.");
 }
 
 // Função para tratar sucesso na requisição
@@ -58,28 +64,8 @@ function handleSuccess(result) {
 function handleError(errorData) {
     console.error("Erro na requisição:", errorData.erro);
 
-    const fieldMapping = {
-        nome: "nome",
-        email: "email",
-        cpf: "cpf",
-        telefone: "telefone",
-        senha: "senha",
-        confirmaSenha: "confirmaSenha",
-    };
-
-    let firstErrorFieldFocused = false;
-
-    // Exibe mensagens de erro e marca os campos com erro
-    for (const [field, inputId] of Object.entries(fieldMapping)) {
-        if (errorData.erro.toLowerCase().includes(field)) {
-            const input = document.getElementById(inputId);
-            showErrorMessage(input, errorData.erro, firstErrorFieldFocused);
-            if (!firstErrorFieldFocused) {
-                input.focus();
-                firstErrorFieldFocused = true;
-            }
-        }
-    }
+    const input = document.getElementById("email"); // Foca apenas no campo de email
+    showErrorMessage(input, errorData.erro, true); // Exibe a mensagem de erro e foca no campo de email
 }
 
 // Função para exibir mensagens de erro nos campos
@@ -98,10 +84,4 @@ function showErrorMessage(input, errorMessageText, isFirstError) {
     if (!isFirstError) {
         input.focus();
     }
-}
-
-// Função para tratar erros inesperados na requisição
-function handleRequestError(error) {
-    console.error("Erro ao realizar a requisição:", error);
-    alert("Erro inesperado. Por favor, tente novamente.");
 }

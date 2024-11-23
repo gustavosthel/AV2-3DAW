@@ -22,8 +22,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $cpf = trim($data['cpf'] ?? '');
     $telefone = trim($data['telefone'] ?? '');
     $senha = trim($data['senha'] ?? '');
+    $confirmaSenha = trim($data['confirmaSenha'] ?? '');
 
-    if (empty($nome) || empty($email) || empty($cpf) || empty($telefone) || empty($senha)) {
+    // Validações
+    if (empty($nome) || empty($email) || empty($cpf) || empty($telefone) || empty($senha) || empty($confirmaSenha)) {
         http_response_code(400);
         echo json_encode(["erro" => "Todos os campos devem ser preenchidos."]);
         $conn->close();
@@ -37,10 +39,59 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
-    $senhaHash = password_hash($senha, PASSWORD_BCRYPT);
+    if ($senha !== $confirmaSenha) {
+        http_response_code(400);
+        echo json_encode(["erro" => "As senhas não coincidem."]);
+        $conn->close();
+        exit;
+    }
 
-    $comandoSQL = "INSERT INTO Usuarios (nome, email, cpf, telefone, senha) VALUES (?, ?, ?, ?, ?)";
+    // Validações específicas para CPF e telefone
+    if (!preg_match('/^\d{3}\.\d{3}\.\d{3}-\d{2}$/', $cpf)) {
+        http_response_code(400);
+        echo json_encode(["erro" => "CPF inválido: Use o formato XXX.XXX.XXX-XX."]);
+        $conn->close();
+        exit;
+    }
+
+    if (!preg_match('/^\d{11}$/', $telefone)) {
+        http_response_code(400);
+        echo json_encode(["erro" => "Telefone inválido: Use apenas números (11 dígitos, incluindo o DDD)."]);
+        $conn->close();
+        exit;
+    }
+
+    // Verifica se o email já está cadastrado
+    $comandoSQLVerificar = "SELECT * FROM tb_user WHERE user_email = ?";
+    $stmtVerificar = $conn->prepare($comandoSQLVerificar);
+
+    if (!$stmtVerificar) {
+        http_response_code(500);
+        echo json_encode(["erro" => "Erro ao preparar a verificação: " . $conn->error]);
+        $conn->close();
+        exit;
+    }
+
+    $stmtVerificar->bind_param("s", $email);
+    $stmtVerificar->execute();
+    $resultado = $stmtVerificar->get_result();
+
+    if ($resultado->num_rows > 0) {
+        http_response_code(409); // Conflito
+        echo json_encode(["erro" => "Já existe um usuário cadastrado com este email."]);
+        $stmtVerificar->close();
+        $conn->close();
+        exit;
+    }
+    $stmtVerificar->close();
+
+    // Criptografa a senha usando password_hash com ARGON2I
+    $senhaHash = password_hash($senha, PASSWORD_ARGON2I);
+
+    // Prepara a consulta SQL para inserção
+    $comandoSQL = "INSERT INTO tb_user (user_name, user_email, user_cpf, user_telefone, user_senha) VALUES (?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($comandoSQL);
+
     if (!$stmt) {
         http_response_code(500);
         echo json_encode(["erro" => "Erro ao preparar a consulta: " . $conn->error]);
@@ -50,6 +101,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $stmt->bind_param("sssss", $nome, $email, $cpf, $telefone, $senhaHash);
 
+    // Executa a consulta e verifica o resultado
     if ($stmt->execute()) {
         http_response_code(200);
         echo json_encode(["mensagem" => "Usuário cadastrado com sucesso!"]);

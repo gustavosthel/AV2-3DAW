@@ -57,7 +57,7 @@
 .container .right .forms input[type="password"] {
     width: 100%;
     padding: 0.8rem;
-    border: 2px solid #cdcdcd;
+    border: 3px solid #cdcdcd;
     border-radius: 5px;
     font-size: 1rem;
     color: #2d3436;
@@ -122,4 +122,26 @@
 
 .container .right .forms p a {
     color: #B4A0E5;
+}
+
+/* Estilo para inputs com erro */
+.container .right .forms input.input-erro {
+    border: 2px solid red;  /* Borda vermelha para erro */
+}
+
+/* Estilo para mensagens de erro */
+.erro-msg {
+    color: red;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+/* Estilo para o foco em inputs com erro */
+.container .right .forms input.input-erro:focus {
+    border-color: red;  /* Borda vermelha quando o campo com erro está em foco */
+}
+
+/* Estilo para inputs com erro (sem foco) */
+.container .right .forms input.input-erro {
+    border-color: red;  /* Sempre manter a borda vermelha */
 }
