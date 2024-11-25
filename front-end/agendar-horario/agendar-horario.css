@@ -1,0 +1,287 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    padding: 0 50px;
+}
+
+.header h2 {
+    color: #000;
+    font-weight: 600;
+    margin-right: 10px;
+    text-decoration: underline;
+}
+
+.header ul{
+    display: flex;
+}
+
+.header ul li{
+    list-style: none;
+}
+
+.header ul li a{
+    text-decoration: none;
+    color: #000000;
+    font-size: 16px;
+    margin-right: 25px;
+    transition: color 0.3s ease;
+}
+
+.header ul li:hover a{
+    color: #B4A0E5;
+}
+
+.header ul li:last-child a{
+    margin: 0;
+}
+
+
+.header .profile {
+    background: #fff;
+    display: flex;
+    gap: 20px;
+    font-size: 2rem;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 15px;
+}
+
+.header .profile .info {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.header .profile .info img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.header .profile .account h5 {
+    font-size: 15px;
+    margin-bottom: 4px;
+    cursor: pointer;
+}
+
+.header .profile .account p {
+    font-size: 13px;
+    color: #999;
+}
+
+.header .profile > i {
+    font-size: 2rem;
+    color: #B4A0E5;
+    cursor: pointer;
+}
+
+.main .title {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.main .search {
+    display: flex;
+    gap: 1rem; /* Espaçamento entre os inputs */
+    padding: 2rem;
+}
+
+.main .search input {
+    width: 11%; /* Largura dos inputs */
+    height: 40px;
+    max-width: 400px; /* Limita a largura máxima */
+    padding: 10px 20px;
+    border: 1px solid #ccc; /* Borda discreta */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-size: 1rem; /* Tamanho da fonte */
+}
+
+.main .search input:focus {
+    border-color: #B4A0E5; /* Cor ao focar no input */
+    outline: none; /* Remove o outline padrão */
+    box-shadow: 0 0 5px rgba(222, 91, 233, 0.5); /* Adiciona um destaque */
+}
+
+.main .search .bnt-search {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #B4A0E5;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+}
+
+.main .search .bnt-search:hover {
+    background-color: #c1b4e3;
+}
+
+.main .conteiner {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.main .conteiner .top {
+    display: flex;
+    justify-content: space-around;
+    transition: transform 0.5s ease;
+}
+
+.main .conteiner .top .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main .conteiner .top .card .imagens {
+    display: flex;
+    flex-direction: column;
+}
+
+.main .conteiner .top .card .imagens img {
+    border-radius: 16px 16px 0px 0px;
+    border: 3px solid #B4A0E5;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.main .conteiner .top .card .imagens .bnt-card {
+    background-color: #B4A0E5;
+    color: #000;
+    font-weight: 600;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 0px 0px 10px 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Estilos combinados para hover */
+.main .conteiner .top .card .imagens:hover img,
+.main .conteiner .top .card .imagens:hover .bnt-card {
+    border-color: #c1b4e3; /* Muda a cor da borda da imagem */
+    background-color: #c1b4e3; /* Muda a cor do botão */
+}
+
+.schedule {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.schedule ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.schedule li {
+    margin: 0.2rem 0;
+}
+
+.hidden {
+    display: none;
+}
+  
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 50%;
+    box-shadow: 0px 0px 10px #000;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+/* Estilo para o contêiner flexível */
+.modal-details-container {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+/* Estilo para a imagem */
+.modal-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 3px solid #B4A0E5;
+}
+
+/* Estilo para as informações */
+.modal-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+}
+
+.modal-info p {
+    font-size: 1rem;
+    color: #333;
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+.modal-info strong {
+    color: #B4A0E5;
+    font-weight: bold;
+}
+
+.modal-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #B4A0E5;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modal-button:hover {
+    background-color: #c1b4e3;
+}
+
+/* Bloquear scroll no corpo */
+.no-scroll {
+    overflow: hidden;
+}

@@ -7,20 +7,42 @@
 }
 
 .header h2 {
-    color: #354670;
+    color: #000;
     font-weight: 600;
+    margin-right: 10px;
+    text-decoration: underline;
 }
 
-.header .nav ul {
+.header ul{
     display: flex;
-    align-items: center;
-    list-style: none;
-    gap: 1rem;
 }
+
+.header ul li{
+    list-style: none;
+}
+
+.header ul li a{
+    text-decoration: none;
+    color: #000000;
+    font-size: 16px;
+    margin-right: 25px;
+    transition: color 0.3s ease;
+}
+
+.header ul li:hover a{
+    color: #B4A0E5;
+}
+
+.header ul li:last-child a{
+    margin: 0;
+}
+
 
 .header .profile {
     background: #fff;
     display: flex;
+    gap: 20px;
+    font-size: 2rem;
     align-items: center;
     justify-content: space-between;
     border-radius: 15px;
@@ -52,12 +74,103 @@
 }
 
 .header .profile > i {
-    font-size: 24px;
-    color: #354670;
+    font-size: 2rem;
+    color: #B4A0E5;
     cursor: pointer;
 }
 
-.container {
-    
+.main .title {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
 }
 
+.main .coiteiner,
+.main .coiteiner-2 {
+    display: flex;
+    justify-content: space-around;
+    transition: transform 0.5s ease;
+}
+
+.seprator{
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 10px 60px 10px;
+}
+
+.main .coiteiner .card,
+.main .coiteiner-2 .card-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main .coiteiner .card h5,
+.main .coiteiner-2 .card-2 h5 {
+    font-size: 1.1rem;
+}
+
+.main .coiteiner .card .imagens,
+.main .coiteiner-2 .card-2 .imagens {
+    display: flex;
+    flex-direction: column;
+}
+
+.main .coiteiner .card .imagens img,
+.main .coiteiner-2 .card-2 .imagens img {
+    border-radius: 16px 16px 0px 0px;
+    border: 3px solid #B4A0E5;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.main .coiteiner .card .imagens .bnt-card,
+.main .coiteiner-2 .card-2 .imagens .bnt-card {
+    background-color: #B4A0E5;
+    color: #000;
+    font-weight: 600;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 0px 0px 10px 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Estilos combinados para hover */
+.main .coiteiner .card .imagens:hover img,
+.main .coiteiner .card .imagens:hover .bnt-card,
+.main .coiteiner-2 .card-2 .imagens:hover img,
+.main .coiteiner-2 .card-2 .imagens:hover .bnt-card {
+    border-color: #c1b4e3; /* Muda a cor da borda da imagem */
+    background-color: #c1b4e3; /* Muda a cor do botão */
+}
+
+.carousel-container,
+.carousel-container-2 {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #B4A0E5;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 1.2rem;
+    z-index: 10;
+}
+
+.carousel-button.prev,
+.carousel-button.prev-2 {
+    left: 20px;
+}
+
+.carousel-button.next,
+.carousel-button.next-2 {
+    right: 20px;
+}

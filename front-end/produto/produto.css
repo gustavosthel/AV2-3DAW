@@ -1,0 +1,222 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    padding: 0 50px;
+}
+
+.header h2 {
+    color: #000;
+    font-weight: 600;
+    margin-right: 10px;
+    text-decoration: underline;
+}
+
+.header ul{
+    display: flex;
+}
+
+.header ul li{
+    list-style: none;
+}
+
+.header ul li a{
+    text-decoration: none;
+    color: #000000;
+    font-size: 16px;
+    margin-right: 25px;
+    transition: color 0.3s ease;
+}
+
+.header ul li:hover a{
+    color: #B4A0E5;
+}
+
+.header ul li:last-child a{
+    margin: 0;
+}
+
+
+.header .profile {
+    background: #fff;
+    display: flex;
+    gap: 20px;
+    font-size: 2rem;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 15px;
+}
+
+.header .profile .info {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.header .profile .info img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.header .profile .account h5 {
+    font-size: 15px;
+    margin-bottom: 4px;
+    cursor: pointer;
+}
+
+.header .profile .account p {
+    font-size: 13px;
+    color: #999;
+}
+
+.header .profile > i {
+    font-size: 2rem;
+    color: #B4A0E5;
+    cursor: pointer;
+}
+
+.main .title {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.main .conteiner {
+    display: flex;
+    gap: 2rem;
+}
+
+.main .conteiner .image-page {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1.2rem;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    margin-left: 2rem;
+    width: 25%;
+}
+
+.main .conteiner .image-page img {
+    border-radius: 10px;
+}
+
+.main .conteiner .image-page h5 {
+    font-weight: 600;
+    min-width: 350px;
+    font-size: 1.2rem;
+}
+
+/* Estilização da seção de detalhes */
+.main .conteiner .details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-right: 2rem;
+    border: 2px solid #000000;
+    border-radius: 10px;    
+}
+
+/* Estilização do título */
+.details h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* Estilização das caixas de seleção */
+.box {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.box .left, .box .center, .box .right {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 30%;
+}
+
+.box input[type="checkbox"] {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 2px;
+    border: 2px solid #a6a6a6;
+    margin-right: 0.5rem;
+    cursor: pointer;
+    position: relative;
+    background-color: transparent;
+}
+
+.box input[type="checkbox"]:checked {
+    background-color: #B4A0E5;
+}
+
+.box label {
+    font-size: 1rem;
+    font-weight: normal;
+    color: #333;
+}
+
+/* Estilização da área de texto */
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-bottom: 1.5rem;
+    resize: none;
+    font-size: 1rem;
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilização dos botões */
+.buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    width: 100%;
+}
+
+.buttons button {
+    background-color: #B4A0E5;
+    color: white;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.buttons button:hover {
+    background-color: #c1b4e3;
+}
+
+.buttons button:last-child {
+    background-color: #B4A0E5;
+}
+
+.buttons button:last-child:hover {
+    background-color: #c1b4e3;
+}
+
+/* Estilização da linha de separação */
+hr {
+    width: 100%;
+    margin: 1.5rem 0;
+    border: 1px solid #bebebe;
+}

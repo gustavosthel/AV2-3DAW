@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar Horario</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../globals.css">
+    <link rel="stylesheet" href="agendar-horario.css">
+</head>
+<body>
+
+    <div class="header">
+        <h2>Beleza e Estética</h2>
+        <div class="nav">
+            <ul>
+                <li><a href="../home/home.html">Início</a></li>
+                <li><a href="#">Profissionais</a></li>
+                <li><a href="#">Sobre nós</a></li>
+            </ul>
+        </div>
+        <div class="profile">
+            <i class='bx bx-cart' onclick="redirectToCar()"></i>
+            <div class="info">
+                <img src="../public/imagens/profileCat.jpg">
+                <div class="account">
+                    <h5>Reza MK</h5>
+                    <p>exemple@gmail.com</p>
+                </div>
+                <i class='bx bx-chevron-down'></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="title">
+            <h3>ESCOLHA DE HORÁRIO E PROFISSIONAL DISPONÍVEIS</h3>
+        </div>
+        <div class="search">
+            <!-- Adicionado campos para busca -->
+            <input type="date" id="dateInput">  
+            <input type="time" id="timeInput">
+            <button class="bnt-search" onclick="filterProfessionals()">Aplicar</button>
+        </div>
+        <div id="professionalContainer" class="conteiner">
+            <div class="top">
+                <div class="card" data-schedule="Segunda:09-00:17-00,Terça:09-00:17-00,Quarta:09-00:12-00">
+                    <p>Fernanda</p>
+                    <div class="imagens">
+                        <img src="../public/imagens/profileCard1.png" alt="">
+                        <button class="bnt-card">Selecionar</button>
+                    </div>
+                    <div class="schedule">
+                        <p><strong>Horários:</strong></p>
+                        <ul>
+                            <li>Segunda: 09:00 - 17:00</li>
+                            <li>Terça: 09:00 - 17:00</li>
+                            <li>Quarta: 09:00 - 12:00</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card" data-schedule="Segunda:10-00:18-00,Quinta:12-00:20-00,Sexta:09-00:15-00">
+                    <p>Julia</p>
+                    <div class="imagens">
+                        <img src="../public/imagens/profileCard2.png" alt="">
+                        <button class="bnt-card">Selecionar</button>
+                    </div>
+                    <div class="schedule">
+                        <p><strong>Horários:</strong></p>
+                        <ul>
+                            <li>Segunda: 10:00 - 18:00</li>
+                            <li>Quinta: 12:00 - 20:00</li>
+                            <li>Sexta: 09:00 - 15:00</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card" data-schedule="Terça:08-00:16-00,Quarta:08-00:16-00,Sábado:09-00:13-00">
+                    <p>Maria</p>
+                    <div class="imagens">
+                        <img src="../public/imagens/profileCard3.png" alt="">
+                        <button class="bnt-card">Selecionar</button>
+                    </div>
+                    <div class="schedule">
+                        <p><strong>Horários:</strong></p>
+                        <ul>
+                            <li>Terça: 08:00 - 16:00</li>
+                            <li>Quarta: 08:00 - 16:00</li>
+                            <li>Sábado: 09:00 - 13:00</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card" data-schedule="Quarta:14-00:20-00,Quinta:14-00:20-00,Sexta:09-00:17-00">
+                    <p>Andre</p>
+                    <div class="imagens">
+                        <img src="../public/imagens/profileCard4.png" alt="">
+                        <button class="bnt-card">Selecionar</button>
+                    </div>
+                    <div class="schedule">
+                        <p><strong>Horários:</strong></p>
+                        <ul>
+                            <li>Quarta: 14:00 - 20:00</li>
+                            <li>Quinta: 14:00 - 20:00</li>
+                            <li>Sexta: 09:00 - 17:00</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="top">
+                <div class="card" data-schedule="Segunda:07-00:15-00,Terça:07-00:15-00,Quinta:07-00:15-00">
+                    <p>Carla</p>
+                    <div class="imagens">
+                        <img src="../public/imagens/profileCard5.png" alt="">
+                        <button class="bnt-card">Selecionar</button>
+                    </div>
+                    <div class="schedule">
+                        <p><strong>Horários:</strong></p>
+                        <ul>
+                            <li>Segunda: 07:00 - 15:00</li>
+                            <li>Terça: 07:00 - 15:00</li>
+                            <li>Quinta: 07:00 - 15:00</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card" data-schedule="Segunda:09-00:17-00,Sexta:12-00:20-00,Sábado:09-00:13-00">
+                    <p>Natalia</p>
+                    <div class="imagens">
+                        <img src="../public/imagens/profileCard6.png" alt="">
+                        <button class="bnt-card">Selecionar</button>
+                    </div>
+                    <div class="schedule">
+                        <p><strong>Horários:</strong></p>
+                        <ul>
+                            <li>Segunda: 09:00 - 17:00</li>
+                            <li>Sexta: 12:00 - 20:00</li>
+                            <li>Sábado: 09:00 - 13:00</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card" data-schedule="Terça:10-00:18-00,Quarta:10-00:18-00,Quinta:10-00:18-00">
+                    <p>Pedro</p>
+                    <div class="imagens">
+                        <img src="../public/imagens/profileCard7.png" alt="">
+                        <button class="bnt-card">Selecionar</button>
+                    </div>
+                    <div class="schedule">
+                        <p><strong>Horários:</strong></p>
+                        <ul>
+                            <li>Terça: 10:00 - 18:00</li>
+                            <li>Quarta: 10:00 - 18:00</li>
+                            <li>Quinta: 10:00 - 18:00</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card" data-schedule="Quarta:08-00:14-00,Quinta:08-00:14-00,Sábado:09-00:15-00">
+                    <p>Giovana</p>
+                    <div class="imagens">
+                        <img src="../public/imagens/profileCard8.png" alt="">
+                        <button class="bnt-card">Selecionar</button>
+                    </div>
+                    <div class="schedule">
+                        <p><strong>Horários:</strong></p>
+                        <ul>
+                            <li>Quarta: 08:00 - 14:00</li>
+                            <li>Quinta: 08:00 - 14:00</li>
+                            <li>Sábado: 09:00 - 15:00</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <h2>Detalhes da Seleção</h2>
+            <div id="modalDetails"></div>
+        </div>
+    </div>
+    
+    <script src="agendar-horario.js"></script>
+</body>
+</html>

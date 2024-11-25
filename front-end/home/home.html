@@ -12,17 +12,18 @@
 <body>
 
     <div class="header">
-        <h2>Clinica Estetica</h2>
+        <h2>Beleza e Estética</h2>
         <div class="nav">
             <ul>
-                <li>Início</li>
-                <li>Profissionais</li>
-                <li>Sobre nós</li>
+                <li><a href="../home/home.html">Início</a></li>
+                <li><a href="#">Profissionais</a></li>
+                <li><a href="#">Sobre nós</a></li>
             </ul>
         </div>
         <div class="profile">
+            <i class='bx bx-cart' onclick="redirectToCar()"></i>
             <div class="info">
-                <img src="imagens/Perfil.jpeg">
+                <img src="../public/imagens/profileCat.jpg">
                 <div class="account">
                     <h5>Reza MK</h5>
                     <p>exemple@gmail.com</p>
@@ -32,9 +33,99 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="main">
+        <div class="title">
+            <h3>Todos os nossos serviços</h3>
+        </div>
+        <h5 class="seprator">Selecione um serviço e reserve  seu o horário!</h5>
+            
+        <!-- Primeiro Carrossel -->
+        <div class="carousel-container" id="carousel1">
+            <button class="carousel-button prev"><i class='bx bx-chevron-left'></i></button>
+            <div class="coiteiner">
+                <!-- ... cards do primeiro carrossel ... -->
+                <div class="card">
+                    <h5>R$423,65</h5>
+                    <div class="imagens">
+                        <img src="../public/imagens/card1.png" alt="">
+                        <button class="bnt-card" onclick="selectService('../public/imagens/card1.png', 'Cabeleleiro', 'R$423,65')">Selecionar</button>
+                    </div>
+                    <p>Cabeleleiro</p>
+                </div>
+                <div class="card">
+                    <h5>R$223,35</h5>
+                    <div class="imagens">
+                        <img src="../public/imagens/card2.png" alt="">
+                        <button class="bnt-card" onclick="selectService('../public/imagens/card2.png', 'Manicure', 'R$223,35')">Selecionar</button>
+                    </div>
+                    <p>Manicure</p>
+                </div>
+                <div class="card">
+                    <h5>R$113,00</h5>
+                    <div class="imagens">
+                        <img src="../public/imagens/card3.png" alt="">
+                        <button class="bnt-card" onclick="selectService('../public/imagens/card3.png', 'Maquiagens', 'R$113,00')">Selecionar</button>
+                    </div>
+                    <p>Maquiagens</p>
+                </div>
+                <div class="card">
+                    <h5>R$93,00</h5>
+                    <div class="imagens">
+                        <img src="../public/imagens/card4.png" alt="">
+                        <button class="bnt-card" onclick="selectService('../public/imagens/card4.png', 'Sobrancelhas', 'R$93,00')">Selecionar</button>
+                    </div>
+                    <p>Sobrancelhas</p>
+                </div>
+            </div>
+            <button class="carousel-button next"><i class='bx bx-chevron-right'></i></button>
+        </div>
         
+        <h5 class="seprator">Se preferir, você pode reservar o seu horário para usufruir de um dos nossos pacotes!</h5>
+            
+        <!-- Segundo Carrossel -->
+        <div class="carousel-container" id="carousel2">
+            <button class="carousel-button prev"><i class='bx bx-chevron-left'></i></button>
+            <div class="coiteiner">
+                <!-- ... cards do segundo carrossel ... -->
+                <div class="card">
+                    <h5>R$107,00</h5>
+                    <div class="imagens">
+                        <img src="../public/imagens/card5.png" alt="">
+                        <button class="bnt-card" onclick="selectService('../public/imagens/card5.png', 'Cabeleleiro', 'R$107,00')">Selecionar</button>
+                    </div>
+                    <p>Cabeleleiro</p>
+                </div>
+                <div class="card">
+                    <h5>R$350,69</h5>
+                    <div class="imagens">
+                        <img src="../public/imagens/card6.png" alt="">
+                        <button class="bnt-card" onclick="selectService('../public/imagens/card6.png', 'Sobrancelhas', 'R$350,69')">Selecionar</button>
+                    </div>
+                    <p>Sobrancelhas</p>
+                </div>
+                <div class="card">
+                    <h5>R$270,69</h5>
+                    <div class="imagens">
+                        <img src="../public/imagens/card7.png" alt="">
+                        <button class="bnt-card" onclick="selectService('../public/imagens/card6.png', 'Maquiagens', 'R$270,69')">Selecionar</button>
+                    </div>
+                    <p>Maquiagens</p>
+                </div>
+                <div class="card">
+                    <h5>R$470,69</h5>
+                    <div class="imagens">
+                        <img src="../public/imagens/card8.png" alt="">
+                        <button class="bnt-card" onclick="selectService('../public/imagens/card7.png', 'Maquiagens', 'R$470,69')">Selecionar</button>
+                    </div>
+                    <p>Maquiagens</p>
+                </div>                        
+            </div>
+            <button class="carousel-button next"><i class='bx bx-chevron-right'></i></button>
+        </div>
     </div>
     
+
+    <script src="home.js"></script>
 </body>
 </html>
+
