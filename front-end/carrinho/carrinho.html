@@ -42,6 +42,44 @@
             <!-- Os cards gerados pelo JavaScript serão inseridos aqui -->
         </div>
     </div>
+
+    <div id="modalAlterReservation" class="modal">
+        <div class="modal-content">
+            <span id="closeModalAlterReservation" class="close">&times;</span>
+            <h2>Alterar Reserva</h2>
+            <form id="alterReservationForm" class="form">
+                <div class="form-group">
+                    <label for="serviceInput">Serviço</label>
+                    <input type="text" id="serviceInput" class="form-control" disabled />
+                </div>
+                <div class="form-group">
+                    <label for="dateInput">Data</label>
+                    <input type="date" id="dateInput" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="timeInput">Horário</label>
+                    <input type="time" id="timeInput" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="professionalInput">Profissional</label>
+                    <input type="text" id="professionalInput" class="form-control" disabled />
+                </div>
+                <button type="submit" class="btn-submit">Salvar Alterações</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Confirmação de Exclusão -->
+    <div id="modalCancelReservation" class="modal">
+        <div class="modal-content">
+            <span id="closeModalCancel" class="close">&times;</span>
+            <h2>Tem certeza que deseja cancelar esta reserva?</h2>
+            <div class="modal-buttons">
+                <button id="cancelButton" class="btn">Cancelar</button>
+                <button id="confirmCancelButton" class="btn confirm">Confirmar Exclusão</button>
+            </div>
+        </div>
+    </div>
     
     <script src="carrinho.js"></script>
 </body>
