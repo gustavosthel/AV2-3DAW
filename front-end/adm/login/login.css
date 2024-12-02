@@ -1,0 +1,156 @@
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #2d3436;
+}
+
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.container .left {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .left img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.container .right {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.container .right .forms {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+}
+
+.container .right .forms h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2d3436;
+}
+
+.container .right .forms p {
+    font-size: 0.9rem;
+    color: #636e72;
+}
+
+/* Labels e inputs */
+.container .right .forms label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    color: #2d3436;
+}
+
+.container .right .forms input[type="text"],
+.container .right .forms input[type="tel"],
+.container .right .forms input[type="password"] {
+    width: 100%;
+    padding: 0.8rem;
+    border: 3px solid #cdcdcd;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #2d3436;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+.container .right .forms input:focus {
+    border-color: #B4A0E5;
+}
+
+.container .right .forms .checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.container .right .forms input[type="checkbox"] {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 2px;
+    border: 2px solid #a6a6a6;
+    margin-right: 0.5rem;
+    cursor: pointer;
+    position: relative;
+    background-color: transparent;
+}
+
+.container .right .forms input[type="checkbox"]:checked {
+    background-color: #B4A0E5;
+}
+
+/* Adicionando o ícone de check */
+.container .right .forms input[type="checkbox"]:checked::after {
+    content: "\2713"; /* Símbolo Unicode para o checkmark (✔) */
+    font-size: 14px; 
+    color: #ffff; 
+    position: absolute;
+    left: 1px; 
+}
+
+/* Botões */
+.container .right .forms button {
+    width: 100%;
+    padding: 0.6rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    background: #B4A0E5;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: background 0.3s ease;
+}
+
+.container .right .forms button:hover {
+    background: #c1b3e4;
+}
+
+.container .right .forms p a {
+    color: #B4A0E5;
+}
+
+/* Estilo para inputs com erro */
+.container .right .forms input.input-erro {
+    border: 2px solid red;  /* Borda vermelha para erro */
+}
+
+/* Estilo para mensagens de erro */
+.erro-msg {
+    color: red;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+/* Estilo para o foco em inputs com erro */
+.container .right .forms input.input-erro:focus {
+    border-color: red;  /* Borda vermelha quando o campo com erro está em foco */
+}
+
+/* Estilo para inputs com erro (sem foco) */
+.container .right .forms input.input-erro {
+    border-color: red;  /* Sempre manter a borda vermelha */
+}
