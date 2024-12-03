@@ -57,9 +57,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmtVerificar->close();
         $conn->close();
         exit;
+    } 
+
+    // Verifica se o usuário é admin@admin.com
+    if ($email === "admin@admin.com") {
+        http_response_code(200);
+        echo json_encode(["mensagem" => "Usuário admin encontrado!", "redirecionar" => true]);
     } else {
         http_response_code(200);
-        echo json_encode(["mensagem" => "Usuário logado com sucesso!"]);
+        echo json_encode(["mensagem" => "Usuário logado com sucesso!", "redirecionar" => false]);
     }
 
     $stmtVerificar->close();

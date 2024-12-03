@@ -15,7 +15,14 @@ document.getElementById("formsUsuario").addEventListener("submit", async functio
         // Processa a resposta da requisição
         if (response.ok) {
             const result = await response.json();
-            handleSuccess(result);
+
+            // Verifica se precisa redirecionar para outra página
+            if (result.redirecionar) {
+                window.location.assign("http://localhost/clinica-estetica/front-end/adm/home/home.html") // Página para admin
+            } else {
+                handleSuccess(result);
+            }
+
         } else {
             const errorData = await response.json();
             handleError(errorData);
