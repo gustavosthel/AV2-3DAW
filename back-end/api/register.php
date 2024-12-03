@@ -86,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmtVerificar->close();
 
     // Criptografa a senha usando password_hash com ARGON2I
-    $senhaHash = password_hash($senha, PASSWORD_ARGON2I);
+    $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
 
     // Prepara a consulta SQL para inserção
     $comandoSQL = "INSERT INTO tb_user (user_name, user_email, user_cpf, user_telefone, user_senha) VALUES (?, ?, ?, ?, ?)";
