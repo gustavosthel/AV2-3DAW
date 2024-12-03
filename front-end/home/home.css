@@ -88,6 +88,7 @@
 .main .coiteiner,
 .main .coiteiner-2 {
     display: flex;
+    gap: 3rem;
     justify-content: space-around;
     transition: transform 0.5s ease;
 }
@@ -103,6 +104,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-width: 250px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
 }
 
 .main .coiteiner .card h5,
@@ -148,29 +153,30 @@
 .carousel-container,
 .carousel-container-2 {
     position: relative;
-    overflow: hidden;
     width: 100%;
+    max-width: 1450px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel-track-container {
+    overflow: hidden;
+    padding: 20px 0;
 }
 
 .carousel-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: #B4A0E5;
-    border: none;
+    background: rgba(0,0,0,0.5);
+    color: white;
     border-radius: 50%;
+    border: none;
+    padding: 10px 15px;
     cursor: pointer;
-    padding: 10px;
-    font-size: 1.2rem;
-    z-index: 10;
+    z-index: 100;
 }
 
-.carousel-button.prev,
-.carousel-button.prev-2 {
-    left: 20px;
-}
+.prev { left: 0; }
+.next { right: 0; }
 
-.carousel-button.next,
-.carousel-button.next-2 {
-    right: 20px;
-}

@@ -20,63 +20,85 @@
         <img src="../image/icon.png" alt="icone">
     </header>
     <main>
-       <h2>Configurações de Funcionários</h2>
+        <h2>Configurações de Funcionários</h2>
         <table class="tabelaFuncs">
-            <tr>
-                <th>Nome</th>
-                <th>CPF</th>
-                <th>Cargo</th>
-                <th>
-                    <button id="adicionar">
-                        <p>adicionar</p>
-                        <img src="../image/add.png" alt="">
-                    </button>
-                   
-                </th>
-            </tr>
-            <tr>
-                <td>Teste</td>
-                <td>Teste</td>
-                <td>Teste</td>
-                <td><button class="editar">
-                    <p>editar</p>
-                    <img src="../image/edit.png" alt="">
-                </button>
-                    <button class="deleta">
-                        <p>deletar</p>
-                        <img src="../image/delete.png" alt="">
-                    </button></td>
-            </tr>
-            <tr>
-                <td>Teste</td>
-                <td>Teste</td>
-                <td>Teste</td>
-                <td><button class="editar">
-                    <p>editar</p>
-                    <img src="../image/edit.png" alt="">
-                </button>
-                    <button class="deleta">
-                        <p>deletar</p>
-                        <img src="../image/delete.png" alt="">
-                    </button></td>
-            </tr>
-            <tr>
-                <td>Teste</td>
-                <td>Teste</td>
-                <td>Teste</td>
-                <td><button class="editar">
-                    <p>editar</p>
-                    <img src="../image/edit.png" alt="">
-                </button>
-                    <button class="deleta">
-                        <p>deletar</p>
-                        <img src="../image/delete.png" alt="">
-                    </button></td>
-            </tr>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>Cargo</th>
+                    <th>Horários</th>
+                    <th>
+                        <button id="adicionar">
+                            <p>Adicionar</p>
+                            <img src="../image/add.png" alt="Adicionar">
+                        </button>
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="tabelaFuncs">
+                <!-- As linhas serão preenchidas dinamicamente pelo JavaScript -->
+            </tbody>
         </table>
     </main>
-    <footer>
-        <p>© Todos os direitos reservados à Beleza e Estética</p>
-    </footer>
+
+    <!-- Modal -->
+    <div id="modalForm" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <h2>Adicionar Funcionário</h2>
+            <form id="addForm">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
+    
+                <label for="cpf">CPF:</label>
+                <input type="text" id="cpf" name="cpf" required>
+    
+                <label for="role">Cargo:</label>
+                <input type="text" id="role" name="role" required>
+    
+                <label for="schedule">Horários:</label>
+                <input type="text" id="schedule" name="schedule" required>
+    
+                <button type="submit">Salvar</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Modal de Edição -->
+    <div id="modalEditEmployee" class="modal">
+        <div class="modal-content">
+            <span id="closeModalEditEmployee" class="close">&times;</span>
+            <h2>Editar Funcionário</h2>
+            <form id="editEmployeeForm">
+                <label for="editName">Nome:</label>
+                <input type="text" id="editName" name="name" required>
+                
+                <label for="editCpf">CPF:</label>
+                <input type="text" id="editCpf" name="cpf" required>
+                
+                <label for="editRole">Cargo:</label>
+                <input type="text" id="editRole" name="role" required>
+                
+                <label for="editSchedule">Horários:</label>
+                <input type="text" id="editSchedule" name="schedule" required>
+                
+                <button type="submit">Salvar Alterações</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Exclusão -->
+    <div id="modalDeleteEmployee" class="modal">
+        <div class="modal-content">
+            <span id="closeModalDeleteEmployee" class="close">&times;</span>
+            <h2>Confirmar Exclusão</h2>
+            <p>Tem certeza de que deseja excluir este funcionário?</p>
+            <button id="cancelButton" class="cancel-button">Cancelar</button>
+            <button id="confirmDeleteButton" class="confirm-button">Confirmar</button>
+        </div>
+    </div>
+
+    <script src="funcionario.js"></script>
 </body>
 </html>

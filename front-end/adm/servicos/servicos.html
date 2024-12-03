@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../globals.css">
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="servicos.css">
     <title>Configuração de Serviços</title>
 </head>
 <body>
@@ -20,11 +20,78 @@
         <img src="../image/icon.png" alt="icone">
     </header>
     <main>
-       <h2>Configuração de Serviços</h2>
-       
+        <h2>Configurações de Produtos</h2>
+        <table class="tabelaProdutos">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Preço</th>
+                    <th>Descrição</th>
+                    <th>
+                        <button id="adicionar">
+                            <p>Adicionar</p>
+                            <img src="../image/add.png" alt="Adicionar">
+                        </button>
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="tabelaProdutos">
+                <!-- As linhas serão preenchidas dinamicamente pelo JavaScript -->
+            </tbody>
+        </table>
     </main>
-    <footer>
-        <p>© Todos os direitos reservados à Beleza e Estética</p>
-    </footer>
+    
+    <!-- Modal -->
+    <div id="modalForm" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <h2>Adicionar Produto</h2>
+            <form id="addForm">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
+    
+                <label for="price">Preço:</label>
+                <input type="text" id="price" name="price" required>
+    
+                <label for="description">Descrição:</label>
+                <input type="text" id="description" name="description" required>
+    
+                <button type="submit">Salvar</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Modal de Edição -->
+    <div id="modalEditProduct" class="modal">
+        <div class="modal-content">
+            <span id="closeModalEditProduct" class="close">&times;</span>
+            <h2>Editar Produto</h2>
+            <form id="editProductForm">
+                <label for="editName">Nome:</label>
+                <input type="text" id="editName" name="name" required>
+                
+                <label for="editPrice">Preço:</label>
+                <input type="text" id="editPrice" name="price" required>
+                
+                <label for="editDescription">Descrição:</label>
+                <input type="text" id="editDescription" name="description" required>
+                
+                <button type="submit">Salvar Alterações</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Modal de Exclusão -->
+    <div id="modalDeleteProduct" class="modal">
+        <div class="modal-content">
+            <span id="closeModalDeleteProduct" class="close">&times;</span>
+            <h2>Confirmar Exclusão</h2>
+            <p>Tem certeza de que deseja excluir este produto?</p>
+            <button id="cancelButton" class="cancel-button">Cancelar</button>
+            <button id="confirmDeleteButton" class="confirm-button">Confirmar</button>
+        </div>
+    </div>
+
+    <script src="servicos.js"></script>
 </body>
 </html>

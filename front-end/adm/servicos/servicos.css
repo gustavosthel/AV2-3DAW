@@ -1,0 +1,230 @@
+main
+{
+    height: fit-content;
+    margin: 2% 0%;
+}
+
+table
+{
+    margin: 2% 0%;
+    width: 90%;
+}
+
+th, td
+{
+    width: 25%;
+    text-align: center;
+
+}
+
+table img
+{
+    width: 10%;
+}
+
+button
+{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover
+{
+    color: rgb(90, 88, 88);
+}
+
+.modal {
+    display: none; /* Modal inicia oculto */
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Fundo escuro com opacidade */
+    z-index: 1000; /* Certifica que o modal está acima de outros elementos */
+}
+
+.modal-content {
+    background: #fff; /* Fundo branco para o conteúdo */
+    padding: 30px;
+    border-radius: 10px;
+    width: 400px; /* Largura fixa */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra para destaque */
+    animation: slide-down 0.3s ease-out; /* Animação ao abrir */
+    position: relative; /* Necessário para posicionar o botão de fechar */
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.close:hover {
+    color: #ff0000; /* Muda a cor ao passar o mouse */
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    text-align: center; /* Centraliza o título */
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+form input:focus {
+    outline: none;
+    border-color: #B4A0E5; /* Cor ao focar no campo */
+    box-shadow: 0 0 5px rgba(204, 112, 187, 0.5);
+}
+
+form button {
+    width: 100%;
+    padding: 12px;
+    background: #B4A0E5; /* Azul padrão */
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+form button:hover {
+    background: #c1b4e3;
+    color: #000;
+}
+
+/* Animação ao abrir o modal */
+@keyframes slide-down {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.tabelaProdutos {
+    width: 100%;
+    border-collapse: collapse; /* Remove os espaços entre bordas */
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar a tabela */
+}
+
+.tabelaProdutos th, .tabelaProdutos td {
+    padding: 12px 15px;
+    text-align: left; /* Alinha o conteúdo à esquerda */
+    border-bottom: 1px solid #ddd; /* Adiciona uma linha para separação */
+}
+
+.tabelaProdutos th {
+    background-color: #B4A0E5; /* Fundo azul para o cabeçalho */
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.tabelaProdutos tr:nth-child(even) {
+    background-color: #f9f9f9; /* Fundo alternado para linhas pares */
+}
+
+.tabelaProdutos tr:hover {
+    background-color: #f1f1f1; /* Fundo cinza claro ao passar o mouse */
+}
+
+.tabelaProdutos button {
+    padding: 8px 12px;
+    background-color: #B4A0E5; /* Fundo azul padrão */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Espaço entre o texto e o ícone */
+    transition: background-color 0.3s;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.tabelaProdutos button img {
+    width: 16px;
+    height: 16px;
+}
+
+.tabelaProdutos button:hover {
+    background-color: #c1b4e3; /* Azul escuro ao passar o mouse */
+}
+
+.tabelaProdutos button p {
+    margin: 0; /* Remove margens do texto */
+    display: inline; /* Alinha com o ícone */
+}
+
+.tabelaProdutos td:last-child {
+    display: flex;
+    gap: 10px; /* Espaço entre os botões */
+}
+
+.tabelaProdutos #adicionar {
+    background-color: #28a745; /* Fundo verde para o botão "Adicionar" */
+}
+
+.tabelaProdutos #adicionar:hover {
+    background-color: #218838; /* Verde escuro ao passar o mouse */
+}
+
+.cancel-button {
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f44336; /* Vermelho para o botão Cancelar */
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.cancel-button:hover {
+    background-color: #d32f2f; /* Tom mais escuro de vermelho no hover */
+    color: white;
+}
+
+.confirm-button {
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #4CAF50; /* Verde para o botão Confirmar */
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.confirm-button:hover {
+    background-color: #388e3c; /* Tom mais escuro de verde no hover */
+    color: white;
+}
+
